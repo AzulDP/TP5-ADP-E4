@@ -8,7 +8,7 @@ function obtenerFechaHora() {
 
     let fecha = document.getElementById("fecha");
     let horaMin = document.getElementById("horaMin");
-    // let momento = document.getElementById("momento");
+    let momento = document.getElementById("momento");
 
     // let segundos = document.getElementById("segundos");
 
@@ -18,9 +18,8 @@ function obtenerFechaHora() {
     fecha.innerHTML = `${daysOfWeek[fechaActual.getDay()]} ${fechaActual.getDate()} ${monthsOfYear[fechaActual.getMonth()]} ${fechaActual.getFullYear()}`
 
     let horaActual = fechaActual.getHours(),
-        minutosActuales = fechaActual.getMinutes(),
-        segundosActuales = fechaActual.getSeconds(),
-        momentoActual = (horaActual === 0 - 11) ? "AM" : "PM";
+        minutosActuales = fechaActual.getMinutes();
+  
 
     if (minutosActuales < 10) {
         minutosActuales = '0' + minutosActuales;
@@ -30,14 +29,18 @@ function obtenerFechaHora() {
         horaActual = '0' + horaActual;
     }
 
+    let  segundosActuales = fechaActual.getSeconds();
     if (segundosActuales < 10) {
         segundosActuales = '0' + segundosActuales;
     }
 
-    console.log(momentoActual);
+    let momentoActual = (horaActual === 0 - 11) ? "AM" : "PM";
+    // console.log(momentoActual);
 
 
-    horaMin.innerHTML = `${horaActual}:${minutosActuales}: ${segundosActuales} ${momentoActual}`;
+    horaMin.innerHTML = `${horaActual}:${minutosActuales}`;
+    momento.innerHTML = `${momentoActual}`;
+    segundos.innerHTML = `:${segundosActuales}`;
 }
 
 
