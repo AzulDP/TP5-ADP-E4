@@ -38,9 +38,9 @@ function obtenerFechaHora() {
     // console.log(momentoActual);
 
 
-    horaMin.innerHTML = `${horaActual}:${minutosActuales}`;
+    horaMin.innerHTML = `${horaActual} : ${minutosActuales} : `;
     momento.innerHTML = `${momentoActual}`;
-    segundos.innerHTML = `:${segundosActuales}`;
+    segundos.innerHTML = `${segundosActuales}`;
 }
 
 
