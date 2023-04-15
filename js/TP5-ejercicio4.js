@@ -8,7 +8,9 @@ function obtenerFechaHora() {
 
     let fecha = document.getElementById("fecha");
     let horaMin = document.getElementById("horaMin");
-    let segundos = document.getElementById("segundos");
+    // let momento = document.getElementById("momento");
+
+    // let segundos = document.getElementById("segundos");
 
     const daysOfWeek = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
     const monthsOfYear = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
@@ -16,7 +18,9 @@ function obtenerFechaHora() {
     fecha.innerHTML = `${daysOfWeek[fechaActual.getDay()]} ${fechaActual.getDate()} ${monthsOfYear[fechaActual.getMonth()]} ${fechaActual.getFullYear()}`
 
     let horaActual = fechaActual.getHours(),
-        minutosActuales = fechaActual.getMinutes();
+        minutosActuales = fechaActual.getMinutes(),
+        segundosActuales = fechaActual.getSeconds(),
+        momentoActual = (horaActual === 0 - 11) ? "AM" : "PM";
 
     if (minutosActuales < 10) {
         minutosActuales = '0' + minutosActuales;
@@ -26,23 +30,22 @@ function obtenerFechaHora() {
         horaActual = '0' + horaActual;
     }
 
-
-    let segundosActuales = fechaActual.getSeconds();
-
     if (segundosActuales < 10) {
         segundosActuales = '0' + segundosActuales;
     }
 
-    let momento = document.getElementById("momento");
-    // (horaActual === 0 - 11) ? "AM" : "PM";
     
-    console.log(momento);
+    // if (horaActual === 0 - 11) {
+    //     document.write("AM")
+    // }else if (horaActual === 12 - 24){
+    //     document.write("PM")
+    // }
+    console.log(momentoActual);
 
 
-    horaMin.innerHTML = `${horaActual}:${minutosActuales}`;
-    segundos.innerHTML = `:${segundosActuales}`;
-    momento.innerHTML = `:${momento}`;
-
+    horaMin.innerHTML = `${horaActual}:${minutosActuales}: ${segundosActuales} ${momentoActual}`;
 }
 
-setInterval(obtenerFechaHora, 1000)
+
+setInterval(obtenerFechaHora, 1000);
+
