@@ -10,6 +10,8 @@ background-image: linear-gradient(315deg, #333231 0%, #16A085 50%);
 main{
     flex-grow: 1;
 }
-h2{
-    font-family: radjhani, sans-serif;
+article{
+    font-family: fira sans, sans-serif;
+    background-color: black;
+    color: white;
 }
