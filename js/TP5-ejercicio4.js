@@ -34,12 +34,6 @@ function obtenerFechaHora() {
         segundosActuales = '0' + segundosActuales;
     }
 
-    
-    // if (horaActual === 0 - 11) {
-    //     document.write("AM")
-    // }else if (horaActual === 12 - 24){
-    //     document.write("PM")
-    // }
     console.log(momentoActual);
 
 
